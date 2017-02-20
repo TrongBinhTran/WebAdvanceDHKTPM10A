@@ -16,24 +16,18 @@ namespace WebAdvance.Controllers
         }
 
         [HttpPost]
-        public ViewResult Index(LoginResponse loginResponse)
+        public ViewResult Index(LoginModel login)
         {
             if(ModelState.IsValid)
             {
-                if (loginResponse.UserName == "admin" && loginResponse.Password == "admin")
-                {
-                    return View("Admin", loginResponse);
-                }
+             
+                if (login.UserName == "admin" && login.Password == "admin")
+                    return View("Admin", login);
                 else
-                {
-                    return View("NoneAdmin", loginResponse);
-                }
+                    return View("NonAdmin", login);
             }
             else
-            {
                 return View();
-            }
-            
         }
 
         

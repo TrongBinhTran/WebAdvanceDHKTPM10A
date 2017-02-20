@@ -7,25 +7,23 @@ using WebAdvance.Models;
 
 namespace WebAdvance.Controllers
 {
-    public class TesterController : Controller
+    public class ProjectsController : Controller
     {
-        // GET: Tester
+        // GET: Projects
         [HttpGet]
-        public ViewResult Index()
+        public ActionResult Index()
         {
-            ViewBag.Message = "Add Tester";
+            ViewBag.Message = "Add Project";
             return View();
         }
 
         [HttpPost]
-        public ViewResult Index(TesterModel tester)
+        public ActionResult Index(ProjectsModel project)
         {
             if (ModelState.IsValid)
-            {
-                ViewBag.Message = "Tester " + tester.Username + " is added";
-            }
+                ViewBag.Message = "Project " + project.Name + " is added";
             else
-                ViewBag.Message = "Error";
+                ViewBag.Message = "Fail";
             return View();
         }
     }

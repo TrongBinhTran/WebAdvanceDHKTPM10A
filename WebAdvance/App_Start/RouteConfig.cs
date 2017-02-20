@@ -14,6 +14,18 @@ namespace WebAdvance
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Bugs",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Bugs", action = "Index", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Projects",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Projects", action = "Index", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "Tester",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Tester", action = "Index", id = UrlParameter.Optional }
@@ -24,6 +36,10 @@ namespace WebAdvance
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Login", action = "Index", id = UrlParameter.Optional }
             );
+
+            
+
+            
         }
     }
 }

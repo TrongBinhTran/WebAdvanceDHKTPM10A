@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WebAdvance.Models
 {
-    public class LoginResponse
+    public class LoginModel
     {
         // User Name
         [Required(ErrorMessage = "Please enter your username")]
